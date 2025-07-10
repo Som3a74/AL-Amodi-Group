@@ -13,33 +13,18 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState<'en' | 'ar'>('en');
-  const [isMobile, setIsMobile] = useState(false);
 
   const isHomePage = location.pathname === "/" || location.pathname === "";
 
-  useEffect(() => {
-    // Check if mobile and set initial scroll state
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
+  useEffect(() => { 
     setIsScrolled(window.scrollY > 10);
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
-    const handleResize = () => {
-      checkMobile();
-    };
-
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems: NavItem[] = [
@@ -59,13 +44,13 @@ export default function Navbar() {
     <motion.header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled || !isHomePage || isMobile
-          ? "bg-background/95 backdrop-blur-md border-b text-black/80"
+        isScrolled || !isHomePage
+          ? "bg-background/80 backdrop-blur-md border-b border-gray-200 shadow-sm text-black/80"
           : "bg-transparent text-gray-100"
       )}
-      initial={{ y: 0 }}
+      initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Link
