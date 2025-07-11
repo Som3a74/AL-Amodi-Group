@@ -1,18 +1,25 @@
 import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { MenuIcon, XIcon } from "lucide-react";
+import { MenuIcon, XIcon, ShoppingCart } from "lucide-react";
 import { motion } from "framer-motion";
 import type { NavItem } from "@/types/types";
 import logo from "@/assets/logo.png";
+import { useCart } from "@/hooks/useCart";
+import CartSidebar from "@/components/common/CartSidebar";
+import LanguageSwitcher from "@/components/common/LanguageSwitcher";
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState<'en' | 'ar'>('en');
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { cart } = useCart();
+  const [cartBounce, setCartBounce] = useState(false);
 
   const isHomePage = location.pathname === "/" || location.pathname === "";
 
@@ -27,18 +34,22 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems: NavItem[] = [
-    { title: "Home", href: "/" },
-    { title: "About", href: "/about" },
-    { title: "Products", href: "/products" },
-    { title: "Services", href: "/services" },
-    { title: "Contact", href: "/contact" },
-  ];
+  // Cart bounce animation when item count changes
+  useEffect(() => {
+    if (cart.itemCount > 0) {
+      setCartBounce(true);
+      const timer = setTimeout(() => setCartBounce(false), 600);
+      return () => clearTimeout(timer);
+    }
+  }, [cart.itemCount]);
 
-  const toggleLanguage = (lang: 'en' | 'ar') => {
-    setCurrentLanguage(lang);
-    // Here you can add language switching logic
-  };
+  const navItems: Pick<NavItem, 'key' | 'href'>[] = [
+    { key: "home", href: "/" },
+    { key: "products", href: "/products" },
+    { key: "cart", href: "/cart" },
+    { key: "services", href: "/services" },
+    { key: "contact", href: "/contact" },
+  ];
 
   return (
     <motion.header
@@ -70,7 +81,7 @@ export default function Navbar() {
                 "text-sm font-medium transition-colors hover:text-primary relative py-2",
               )}
             >
-              {item.title}
+              {t(`nav.${item.key}`)}
               {location.pathname === item.href && (
                 <motion.span
                   className="absolute bottom-0 left-0 w-full h-0.5 bg-primary"
@@ -82,31 +93,33 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-4">
+          {/* Cart Button */}
+          <motion.div
+            animate={cartBounce ? { scale: [1, 1.2, 1] } : {}}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+          >
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsCartOpen(true)}
+              className="relative hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <ShoppingCart className="h-6 w-6" />
+              {cart.itemCount > 0 && (
+                <motion.span
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white rounded-full flex items-center justify-center text-xs font-bold"
+                >
+                  {cart.itemCount}
+                </motion.span>
+              )}
+            </Button>
+          </motion.div>
+
           {/* Language Switcher */}
-          <div className="hidden md:flex items-center gap-1 text-sm">
-            <button
-              onClick={() => toggleLanguage('en')}
-              className={cn(
-                "px-2 py-1 rounded transition-colors",
-                currentLanguage === 'en' 
-                  ? "text-primary font-semibold" 
-                  : "hover:text-primary"
-              )}
-            >
-              ENGLISH
-            </button>
-            <span className="text-muted-foreground">|</span>
-            <button
-              onClick={() => toggleLanguage('ar')}
-              className={cn(
-                "px-2 py-1 rounded transition-colors",
-                currentLanguage === 'ar' 
-                  ? "text-primary font-semibold" 
-                  : "hover:text-primary"
-              )}
-            >
-              العربية
-            </button>
+          <div className="hidden md:flex">
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button */}
@@ -143,36 +156,14 @@ export default function Navbar() {
                         : "text-muted-foreground"
                     )}
                   >
-                    {item.title}
+                    {t(`nav.${item.key}`)}
                   </Link>
                 ))}
                 
                 {/* Mobile Language Switcher */}
                 <div className="mt-6 pt-6 border-t border-border">
-                  <div className="flex items-center gap-2 px-3">
-                    <button
-                      onClick={() => toggleLanguage('en')}
-                      className={cn(
-                        "px-3 py-2 rounded transition-colors text-sm",
-                        currentLanguage === 'en' 
-                          ? "text-primary font-semibold bg-primary/10" 
-                          : "hover:text-primary"
-                      )}
-                    >
-                      ENGLISH
-                    </button>
-                    <span className="text-muted-foreground">|</span>
-                    <button
-                      onClick={() => toggleLanguage('ar')}
-                      className={cn(
-                        "px-3 py-2 rounded transition-colors text-sm",
-                        currentLanguage === 'ar' 
-                          ? "text-primary font-semibold bg-primary/10" 
-                          : "hover:text-primary"
-                      )}
-                    >
-                      العربية
-                    </button>
+                  <div className="flex items-center justify-center">
+                    <LanguageSwitcher />
                   </div>
                 </div>
               </nav>
@@ -180,6 +171,12 @@ export default function Navbar() {
           </Sheet>
         </div>
       </div>
+
+      {/* Cart Sidebar */}
+      <CartSidebar 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)} 
+      />
     </motion.header>
   );
 }

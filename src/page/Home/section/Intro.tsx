@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // Counter component
 const Counter = ({ value, suffix, label, index }: { value: number; suffix: string; label: string; index: number }) => {
@@ -53,11 +54,12 @@ const Counter = ({ value, suffix, label, index }: { value: number; suffix: strin
 };
 
 export default function Intro() {
+  const { t } = useTranslation();
   const stats = [
-    { value: 65, label: "Exclusive Brands", suffix: "+" },
-    { value: 25000, label: "Products", suffix: "+" },
-    { value: 4, label: "Showrooms", suffix: "+" },
-    { value: 1957, label: "Since", suffix: "" }
+    { value: 65, key: "brands", suffix: "+" },
+    { value: 25000, key: "products", suffix: "+" },
+    { value: 4, key: "showrooms", suffix: "+" },
+    { value: 1957, key: "since", suffix: "" }
   ];
 
 
@@ -76,10 +78,10 @@ export default function Intro() {
             <div className="relative">
               <div className="absolute -top-10 -left-10 w-24 h-24 bg-primary/20 rounded-full blur-xl" />
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Welcome to AL Amodi Group
+                {t('intro.welcome')}
               </h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl">
-                Based in Doha, Qatar, AL Amodi Group is the pioneer of direct supply and distribution of branded international building materials from all over the world. Family-owned since 1957, the parent company AL Amodi Store is an innovative company rooted in a time-honored tradition.
+                {t('intro.description')}
               </p>
               
               {/* Stats with Counter Animation */}
@@ -89,7 +91,7 @@ export default function Intro() {
                     key={index}
                     value={stat.value}
                     suffix={stat.suffix}
-                    label={stat.label}
+                    label={t(`intro.stats.${stat.key}`)}
                     index={index}
                   />
                 ))}
@@ -115,8 +117,8 @@ export default function Intro() {
             {/* Overlay text */}
             <div className="absolute bottom-4 left-4 right-4">
               <div className="bg-black/70 backdrop-blur-sm rounded-lg p-4">
-                <h4 className="text-white font-semibold mb-2">Quality Building Materials</h4>
-                <p className="text-white/80 text-sm">Trusted by professionals across Qatar for over 6 decades</p>
+                <h4 className="text-white font-semibold mb-2">{t('intro.overlay.title')}</h4>
+                <p className="text-white/80 text-sm">{t('intro.overlay.subtitle')}</p>
               </div>
             </div>
           </motion.div>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import prestige from "@/assets/category/imgi_3_Prestige.jpg";
 import contemporary from "@/assets/category/imgi_4_Contemporary.jpg";
 import accessories from "@/assets/category/imgi_5_Accessories.jpg";
@@ -8,46 +9,42 @@ import kitchen from "@/assets/category/imgi_7_Kitchen.jpg";
 import sanitaryFittings from "@/assets/category/imgi_41_santiaryfittings_1.jpg";
 
 const Category = () => {
+  const { t } = useTranslation();
+
   const categories = [
     {
       id: 1,
-      title: "Prestige Collection",
-      description: "Luxury sanitary ware for premium projects",
+      key: "prestige",
       image: prestige,
       link: "/products/prestige"
     },
     {
       id: 2,
-      title: "Contemporary Design",
-      description: "Modern solutions for today's lifestyle",
+      key: "contemporary",
       image: contemporary,
       link: "/products/contemporary"
     },
     {
       id: 3,
-      title: "Bathroom Accessories",
-      description: "Complete your bathroom with premium accessories",
+      key: "accessories",
       image: accessories,
       link: "/products/accessories"
     },
     {
       id: 4,
-      title: "Hydrotherapy",
-      description: "Wellness and relaxation solutions",
+      key: "hydrotherapy",
       image: hydrotherapy,
       link: "/products/hydrotherapy"
     },
     {
       id: 5,
-      title: "Kitchen Solutions",
-      description: "Transform your kitchen with our range",
+      key: "kitchen",
       image: kitchen,
       link: "/products/kitchen"
     },
     {
       id: 6,
-      title: "Sanitary Fittings",
-      description: "Professional grade fittings and fixtures",
+      key: "sanitary",
       image: sanitaryFittings,
       link: "/products/sanitary-fittings"
     }
@@ -86,12 +83,11 @@ const Category = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Explore Our
-            <span className="text-primary ml-3">Categories</span>
+            {t('category.title')}
+            <span className="text-primary ml-3">{t('category.subtitle')}</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Discover our comprehensive range of building materials, from luxury sanitary ware 
-            to modern kitchen solutions. Each category features premium brands trusted worldwide.
+            {t('category.description')}
           </p>
         </motion.div>
 
@@ -120,7 +116,7 @@ const Category = () => {
                   <div className="relative h-64 overflow-hidden">
                     <img
                       src={category.image}
-                      alt={category.title}
+                      alt={t(`category.items.${category.key}.title`)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     
@@ -131,16 +127,16 @@ const Category = () => {
                   {/* Content */}
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
-                      {category.title}
+                      {t(`category.items.${category.key}.title`)}
                     </h3>
                     
                     <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {category.description}
+                      {t(`category.items.${category.key}.description`)}
                     </p>
 
                     {/* Simple CTA */}
                     <div className="flex items-center justify-between">
-                      <span className="text-primary font-medium">Explore Collection</span>
+                      <span className="text-primary font-medium">{t('category.explore')}</span>
                       <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         →
                       </span>
@@ -166,7 +162,7 @@ const Category = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              View All Products
+              {t('category.viewAll')}
             </motion.button>
           </Link>
         </motion.div>

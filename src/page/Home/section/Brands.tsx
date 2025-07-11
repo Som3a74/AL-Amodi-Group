@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 // CSS for animation
 const animationStyles = `
@@ -41,6 +42,7 @@ import brand26 from "@/assets/brands/imgi_27_Image_20180925AB6A.jpg";
 import brand27 from "@/assets/brands/imgi_28_Image_201809256808.jpg";
 
 const Brands = () => {
+    const { t } = useTranslation();
     const brands = [
         brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9,
         brand10, brand11, brand12, brand13, brand14, brand15, brand16, brand17,
@@ -64,11 +66,11 @@ const Brands = () => {
                     viewport={{ once: true }}
                 >
                     <h3 className="text-2xl md:text-3xl font-bold mb-3">
-                        Our Trusted
-                        <span className="text-primary ml-2">Brands</span>
+                        {t('brands.title')}
+                        <span className="text-primary ml-2">{t('brands.subtitle')}</span>
                     </h3>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                        We partner with the world's leading manufacturers to bring you premium quality products
+                        {t('brands.description')}
                     </p>
                 </motion.div>
 
@@ -111,8 +113,8 @@ const Brands = () => {
                     viewport={{ once: true }}
                 >
                     <p className="text-sm text-muted-foreground">
-                        <span className="font-semibold text-primary">65+</span> Premium Brands •
-                        <span className="font-semibold text-primary ml-2">25,000+</span> Products Available
+                        <span className="font-semibold text-primary">65+</span> {t('brands.stats')}
+                        <span className="font-semibold text-primary ml-2">25,000+</span> {t('brands.products')}
                     </p>
                 </motion.div>
             </div>

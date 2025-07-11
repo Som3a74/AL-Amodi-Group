@@ -1,0 +1,280 @@
+{
+  "ourProducts": "Our Products",
+  "discoverCollection": "Discover our premium collection of building materials and luxury finishes",
+  "searchProducts": "Search products...",
+  "sortBy": {
+    "name": "Sort by Name",
+    "priceLow": "Price: Low to High",
+    "priceHigh": "Price: High to Low",
+    "rating": "Highest Rated",
+    "discount": "Biggest Discount",
+    "newest": "Newest First"
+  },
+  "filters": "Filters",
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "cart": "Cart",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "AL Amodi Group",
+    "subtitle": "Pioneer in Building Materials Supply Since 1957 - Your Trusted Partner in Doha, Qatar",
+    "button": "Explore Our Products"
+  },
+  "intro": {
+    "welcome": "Welcome to AL Amodi Group",
+    "description": "Based in Doha, Qatar, AL Amodi Group is the pioneer of direct supply and distribution of branded international building materials from all over the world. Family-owned since 1957, the parent company AL Amodi Store is an innovative company rooted in a time-honored tradition.",
+    "stats": {
+      "brands": "Exclusive Brands",
+      "products": "Products",
+      "showrooms": "Showrooms",
+      "since": "Since"
+    },
+    "overlay": {
+      "title": "Quality Building Materials",
+      "subtitle": "Trusted by professionals across Qatar for over 6 decades"
+    }
+  },
+  "category": {
+    "title": "Explore Our",
+    "subtitle": "Categories",
+    "description": "Discover our comprehensive range of building materials, from luxury sanitary ware to modern kitchen solutions. Each category features premium brands trusted worldwide.",
+    "explore": "Explore Collection",
+    "viewAll": "View All Products",
+    "items": {
+      "prestige": {
+        "title": "Prestige Collection",
+        "description": "Luxury sanitary ware for premium projects"
+      },
+      "contemporary": {
+        "title": "Contemporary Design",
+        "description": "Modern solutions for today's lifestyle"
+      },
+      "accessories": {
+        "title": "Bathroom Accessories",
+        "description": "Complete your bathroom with premium accessories"
+      },
+      "hydrotherapy": {
+        "title": "Hydrotherapy",
+        "description": "Wellness and relaxation solutions"
+      },
+      "kitchen": {
+        "title": "Kitchen Solutions",
+        "description": "Transform your kitchen with our range"
+      },
+      "sanitary": {
+        "title": "Sanitary Fittings",
+        "description": "Professional grade fittings and fixtures"
+      }
+    }
+  },
+  "brands": {
+    "title": "Our Trusted",
+    "subtitle": "Brands",
+    "description": "We partner with the world's leading manufacturers to bring you premium quality products",
+    "stats": "Premium Brands •",
+    "products": "Products Available"
+  },
+  "productDetail": {
+    "notFound": {
+      "title": "Product Not Found",
+      "description": "The product you're looking for doesn't exist.",
+      "backButton": "Back to Products"
+    },
+    "backButton": "Back to Products",
+    "zoomInstructions": "Move mouse to explore",
+    "newBadge": "New",
+    "saleBadge": "-{{discount}}% OFF",
+    "stock": {
+      "inStock": "In Stock",
+      "outOfStock": "Out of Stock"
+    },
+    "quantity": "Quantity",
+    "addToCart": "Add to Cart",
+    "wishlist": "Add to Wishlist",
+    "share": "Share",
+    "tabs": {
+      "description": "Description",
+      "specifications": "Specifications",
+      "reviews": "Reviews"
+    },
+    "specifications": {
+      "dimensions": "Dimensions",
+      "weight": "Weight",
+      "warranty": "Warranty"
+    },
+    "featuresTitle": "Key Features",
+    "benefits": {
+      "title": "Why Choose This Product?",
+      "warranty": {
+        "title": "Extended Warranty",
+        "description": "Enjoy peace of mind with our long-term warranty"
+      },
+      "delivery": {
+        "title": "Fast Delivery",
+        "description": "Get your products delivered quickly across Qatar"
+      },
+      "returns": {
+        "title": "Easy Returns",
+        "description": "Hassle-free returns within 14 days"
+      },
+      "quality": {
+        "title": "Premium Quality",
+        "description": "Sourced from the world's leading manufacturers"
+      }
+    }
+  },
+  "notifications": {
+    "addedToCart": "Added {{productName}} to cart!"
+  },
+  "productPage": {
+    "filters": {
+      "title": "Search Filters",
+      "clear": "Clear All",
+      "results": "{{count}} of {{total}} products",
+      "quickFilters": "Quick Filters",
+      "onSale": "On Sale",
+      "newProducts": "New Products",
+      "inStock": "In Stock",
+      "priceRange": "Price Range",
+      "minRating": "Minimum Rating",
+      "categories": "Categories",
+      "materials": "Materials",
+      "styles": "Styles"
+    },
+    "noProducts": {
+      "title": "No Products Found",
+      "description": "Try adjusting your search criteria"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Contact AL Amodi Group",
+      "description": "Get in touch with Qatar's leading building materials supplier. We're here to help with all your construction needs."
+    },
+    "form": {
+      "title": "Send us a Message",
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your.email@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What is this regarding?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your building materials needs...",
+      "sendButton": "Send Message",
+      "sendingButton": "Sending..."
+    },
+    "info": {
+      "title": "Get in Touch",
+      "description": "Visit our head office in Doha or contact us directly. Our team is ready to assist you with premium building materials and expert advice.",
+      "addressTitle": "Address",
+      "addressLine1": "AL Amodi GROUP",
+      "addressLine2": "Al Dar Apartments Building",
+      "addressLine3": "Mezzanine floor, Building no 91",
+      "addressLine4": "Zone 14, Street 920",
+      "addressLine5": "Doha - Qatar",
+      "phoneTitle": "Phone Numbers",
+      "emailTitle": "Email",
+      "hoursTitle": "Working Hours",
+      "hoursLine1": "8:00 AM to 12:00 PM",
+      "hoursLine2": "4:00 PM to 08:00 PM"
+    }
+  },
+  "cart": {
+    "empty": {
+      "title": "Your Cart is Empty",
+      "description": "Start adding some amazing products to your cart",
+      "button": "Shop Now"
+    },
+    "title": "Shopping Cart",
+    "itemsCount": "{{count}} items in cart",
+    "clearCart": "Clear Cart",
+    "items": "Items",
+    "summary": {
+      "title": "Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "shippingFree": "Free",
+      "tax": "Tax",
+      "total": "Total"
+    },
+    "checkout": "Checkout",
+    "saveForLater": "Save for Later",
+    "freeShipping": "🎉 You've got free shipping!"
+  },
+  "cartSidebar": {
+    "title": "Shopping Cart ({{count}})",
+    "empty": {
+      "text": "Your cart is empty",
+      "button": "Shop Now"
+    },
+    "summary": {
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "shippingFree": "Free",
+      "total": "Total",
+      "button": "View Cart & Checkout"
+    }
+  },
+  "footer": {
+    "company": {
+      "name": "AL Amodi Group",
+      "description": "Leading company in building materials and sanitary fixtures in Qatar since 1957. We provide the finest modern and luxury solutions for your projects."
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "products": "Products",
+      "contact": "Contact",
+      "about": "About"
+    },
+    "categories": {
+      "title": "Categories",
+      "prestige": "Prestige Collection",
+      "contemporary": "Contemporary Design",
+      "accessories": "Bathroom Accessories",
+      "hydrotherapy": "Hydrotherapy",
+      "kitchen": "Kitchen Solutions",
+      "sanitary": "Sanitary Fittings"
+    },
+    "contact": {
+      "title": "Contact Info",
+      "address": "Al Dar Apartments Building, Mezzanine floor, Building no 91, Zone 14, Street 920, Doha - Qatar",
+      "phone": "+974 – 44684693 / +974 – 44161487",
+      "email": "info@alamodigroup.com.qa",
+      "hours": "8:00 AM to 12:00 PM & 4:00 PM to 08:00 PM"
+    },
+    "bottom": {
+      "copyright": "© {{year}} AL Amodi Group. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions",
+      "agent": "Exclusive agents for <1>Griferias Maier</1> in Qatar"
+    }
+  },
+  "contactInfo": {
+    "title": "Get in Touch",
+    "description": "Ready to start your next project? Contact AL Amodi Group today and discover why we're Qatar's trusted building materials supplier since 1957.",
+    "button": "Contact Us Today",
+    "details": {
+      "office": {
+        "title": "Visit Our Office",
+        "content": "Al Dar Apartments Building, Mezzanine floor, Building no 91, Zone 14, Street 920, Doha - Qatar"
+      },
+      "call": {
+        "title": "Call Us",
+        "content": "+974 – 44684693 / +974 – 44161487"
+      },
+      "email": {
+        "title": "Email Us",
+        "content": "info@alamodigroup.com.qa"
+      },
+      "hours": {
+        "title": "Working Hours",
+        "content": "8:00 AM to 12:00 PM & 4:00 PM to 08:00 PM"
+      }
+    }
+  }
+} 

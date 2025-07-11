@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon } from "lucide-react";
 
@@ -20,6 +21,7 @@ const Textarea = ({ className = "", ...props }: React.TextareaHTMLAttributes<HTM
 );
 
 export default function ContactPage() {
+  const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -34,20 +36,20 @@ export default function ContactPage() {
   const contactInfo = [
     {
       icon: <MapPinIcon className="h-6 w-6" />,
-      title: "Address",
+      title: t('contactPage.info.addressTitle'),
       content: (
         <div className="space-y-1">
-          <p className="font-semibold">AL Amodi GROUP</p>
-          <p>Al Dar Apartments Building</p>
-          <p>Mezzanine floor, Building no 91</p>
-          <p>Zone 14, Street 920</p>
-          <p>Doha - Qatar</p>
+          <p className="font-semibold">{t('contactPage.info.addressLine1')}</p>
+          <p>{t('contactPage.info.addressLine2')}</p>
+          <p>{t('contactPage.info.addressLine3')}</p>
+          <p>{t('contactPage.info.addressLine4')}</p>
+          <p>{t('contactPage.info.addressLine5')}</p>
         </div>
       ),
     },
     {
       icon: <PhoneIcon className="h-6 w-6" />,
-      title: "Phone Numbers",
+      title: t('contactPage.info.phoneTitle'),
       content: (
         <div className="space-y-2">
           <p>+974 – 44684693</p>
@@ -57,16 +59,16 @@ export default function ContactPage() {
     },
     {
       icon: <MailIcon className="h-6 w-6" />,
-      title: "Email",
+      title: t('contactPage.info.emailTitle'),
       content: "info@alamodigroup.com.qa",
     },
     {
       icon: <ClockIcon className="h-6 w-6" />,
-      title: "Working Hours",
+      title: t('contactPage.info.hoursTitle'),
       content: (
         <div className="space-y-1">
-          <p>8:00 AM to 12:00 PM</p>
-          <p>4:00 PM to 08:00 PM</p>
+          <p>{t('contactPage.info.hoursLine1')}</p>
+          <p>{t('contactPage.info.hoursLine2')}</p>
         </div>
       ),
     },
@@ -83,10 +85,10 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Contact AL Amodi Group
+              {t('contactPage.hero.title')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Get in touch with Qatar's leading building materials supplier. We're here to help with all your construction needs.
+              {t('contactPage.hero.description')}
             </p>
           </motion.div>
         </div>
@@ -104,56 +106,56 @@ export default function ContactPage() {
               viewport={{ once: true }}
             >
               <div className="bg-card p-8 rounded-xl shadow-lg">
-                <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
+                <h2 className="text-2xl font-bold mb-6">{t('contactPage.form.title')}</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
-                        Full Name
+                        {t('contactPage.form.name')}
                       </label>
                       <Input
                         id="name"
                         type="text"
                         required
-                        placeholder="Your full name"
+                        placeholder={t('contactPage.form.namePlaceholder')}
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium mb-2">
-                        Email Address
+                        {t('contactPage.form.email')}
                       </label>
                       <Input
                         id="email"
                         type="email"
                         required
-                        placeholder="your.email@example.com"
+                        placeholder={t('contactPage.form.emailPlaceholder')}
                       />
                     </div>
                   </div>
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                      Subject
+                      {t('contactPage.form.subject')}
                     </label>
                     <Input
                       id="subject"
                       type="text"
                       required
-                      placeholder="What is this regarding?"
+                      placeholder={t('contactPage.form.subjectPlaceholder')}
                     />
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Message
+                      {t('contactPage.form.message')}
                     </label>
                     <Textarea
                       id="message"
                       required
-                      placeholder="Tell us about your building materials needs..."
+                      placeholder={t('contactPage.form.messagePlaceholder')}
                       rows={6}
                     />
                   </div>
                   <Button type="submit" size="lg" disabled={isSubmitting} className="w-full">
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? t('contactPage.form.sendingButton') : t('contactPage.form.sendButton')}
                   </Button>
                 </form>
               </div>
@@ -168,9 +170,9 @@ export default function ContactPage() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
+                <h2 className="text-2xl font-bold mb-6">{t('contactPage.info.title')}</h2>
                 <p className="text-muted-foreground mb-8">
-                  Visit our head office in Doha or contact us directly. Our team is ready to assist you with premium building materials and expert advice.
+                  {t('contactPage.info.description')}
                 </p>
               </div>
 

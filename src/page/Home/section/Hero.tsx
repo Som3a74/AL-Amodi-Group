@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { ArrowDownIcon } from "lucide-react";
 import { motion } from "framer-motion";
@@ -8,6 +9,7 @@ import hero3 from "@/assets/hero/hero3.jpg";
 import hero4 from "@/assets/hero/hero4.jpg";
 
 export default function Hero() {
+  const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const heroImages = [hero1, hero2, hero3, hero4];
@@ -62,16 +64,16 @@ export default function Hero() {
           className="max-w-3xl mx-auto"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            AL Amodi Group
+            {t('hero.title')}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">
-            Pioneer in Building Materials Supply Since 1957 - Your Trusted Partner in Doha, Qatar
+            {t('hero.subtitle')}
           </p>
           <Button 
             size="lg" 
             className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
           >
-            Explore Our Products
+            {t('hero.button')}
           </Button>
         </motion.div>
       </div>

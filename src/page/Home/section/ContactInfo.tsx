@@ -1,29 +1,28 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 export default function ContactInfo() {
+  const { t } = useTranslation();
+
   const contactDetails = [
     {
       icon: <MapPinIcon className="h-5 w-5" />,
-      title: "Visit Our Office",
-      content: "Al Dar Apartments Building, Mezzanine floor, Building no 91, Zone 14, Street 920, Doha - Qatar"
+      key: "office"
     },
     {
       icon: <PhoneIcon className="h-5 w-5" />,
-      title: "Call Us",
-      content: "+974 – 44684693 / +974 – 44161487"
+      key: "call"
     },
     {
       icon: <MailIcon className="h-5 w-5" />,
-      title: "Email Us",
-      content: "info@alamodigroup.com.qa"
+      key: "email"
     },
     {
       icon: <ClockIcon className="h-5 w-5" />,
-      title: "Working Hours",
-      content: "8:00 AM to 12:00 PM & 4:00 PM to 08:00 PM"
+      key: "hours"
     }
   ];
 
@@ -38,10 +37,10 @@ export default function ContactInfo() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get in Touch
+            {t('contactInfo.title')}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Ready to start your next project? Contact AL Amodi Group today and discover why we're Qatar's trusted building materials supplier since 1957.
+            {t('contactInfo.description')}
           </p>
         </motion.div>
 
@@ -59,9 +58,9 @@ export default function ContactInfo() {
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                   {detail.icon}
                 </div>
-                <h3 className="font-semibold">{detail.title}</h3>
+                <h3 className="font-semibold">{t(`contactInfo.details.${detail.key}.title`)}</h3>
               </div>
-              <p className="text-muted-foreground text-sm">{detail.content}</p>
+              <p className="text-muted-foreground text-sm">{t(`contactInfo.details.${detail.key}.content`)}</p>
             </motion.div>
           ))}
         </div>
@@ -75,7 +74,7 @@ export default function ContactInfo() {
         >
           <Link to="/contact">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Contact Us Today
+              {t('contactInfo.button')}
             </Button>
           </Link>
         </motion.div>
