@@ -1,74 +1,47 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import prestige from "@/assets/category/imgi_3_Prestige.jpg";
-import contemporary from "@/assets/category/imgi_4_Contemporary.jpg";
-import accessories from "@/assets/category/imgi_5_Accessories.jpg";
-import hydrotherapy from "@/assets/category/imgi_6_Hydrotherapy.jpg";
-import kitchen from "@/assets/category/imgi_7_Kitchen.jpg";
-import sanitaryFittings from "@/assets/category/imgi_41_santiaryfittings_1.jpg";
+import productData from "@/data/products.json";
+
+// Function to get the first image for a category
+const getCategoryImage = (categoryName: string) => {
+  const product = productData.products.find(p => p.category === categoryName);
+  return product ? product.image : ""; // Returns the public path to the image
+};
 
 const Category = () => {
   const { t } = useTranslation();
 
-  const categories = [
-    {
-      id: 1,
-      key: "prestige",
-      image: prestige,
-      link: "/products/prestige"
-    },
-    {
-      id: 2,
-      key: "contemporary",
-      image: contemporary,
-      link: "/products/contemporary"
-    },
-    {
-      id: 3,
-      key: "accessories",
-      image: accessories,
-      link: "/products/accessories"
-    },
-    {
-      id: 4,
-      key: "hydrotherapy",
-      image: hydrotherapy,
-      link: "/products/hydrotherapy"
-    },
-    {
-      id: 5,
-      key: "kitchen",
-      image: kitchen,
-      link: "/products/kitchen"
-    },
-    {
-      id: 6,
-      key: "sanitary",
-      image: sanitaryFittings,
-      link: "/products/sanitary-fittings"
-    }
-  ];
+  // Dynamically create categories from the JSON data
+  const uniqueCategories = [...new Set(productData.products.map(p => p.category))];
+
+  const categories = uniqueCategories.map((cat, index) => ({
+    id: index + 1,
+    key: cat.toLowerCase().replace(/\s+/g, '-'), // "WASHBASIN FURNITURE" -> "washbasin-furniture"
+    name: cat,
+    image: getCategoryImage(cat),
+    link: `/category/${cat.toLowerCase().replace(/\s+/g, '-')}`
+  }));
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: { 
       opacity: 0, 
-      y: 30
+      y: 30 
     },
     visible: { 
       opacity: 1, 
-      y: 0
-    }
+      y: 0 
+    },
   };
 
   return (
@@ -116,7 +89,8 @@ const Category = () => {
                   <div className="relative h-64 overflow-hidden">
                     <img
                       src={category.image}
-                      alt={t(`category.items.${category.key}.title`)}
+                      alt={category.name}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     
@@ -131,7 +105,8 @@ const Category = () => {
                     </h3>
                     
                     <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {t(`category.items.${category.key}.description`)}
+                      {/* Using category name as a fallback for description */}
+                      {t(`category.items.${category.key}.description`, `Explore our collection of ${category.name}.`)}
                     </p>
 
                     {/* Simple CTA */}

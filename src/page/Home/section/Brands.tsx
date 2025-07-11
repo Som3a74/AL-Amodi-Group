@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const animationStyles = `
   @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-${27 * 160}px); }
+    100% { transform: translateX(-${20 * 160}px); }
   }
   .group:hover .animate-scroll {
     animation-play-state: paused !important;
@@ -13,41 +13,38 @@ const animationStyles = `
 `;
 
 // Import all brand images
-import brand1 from "@/assets/brands/imgi_2_Image_20180929779A.jpg";
-import brand2 from "@/assets/brands/imgi_3_Image_201809290E79.jpg";
-import brand3 from "@/assets/brands/imgi_4_Image_20180925EE8D.jpg";
-import brand4 from "@/assets/brands/imgi_5_Image_201809254F7B.jpg";
-import brand5 from "@/assets/brands/imgi_6_Image_201809295CA8.jpg";
-import brand6 from "@/assets/brands/imgi_7_Image_201809299143.jpg";
-import brand7 from "@/assets/brands/imgi_8_Image_20180925A907.jpg";
-import brand8 from "@/assets/brands/imgi_9_Image_201809252DD9.jpg";
-import brand9 from "@/assets/brands/imgi_10_Image_20180925BD0A.jpg";
-import brand10 from "@/assets/brands/imgi_11_Image_20180929790C.jpg";
-import brand11 from "@/assets/brands/imgi_12_Image_201809294543.jpg";
-import brand12 from "@/assets/brands/imgi_13_Image_2018092928CD.jpg";
-import brand13 from "@/assets/brands/imgi_14_Image_201809291B14.jpg";
-import brand14 from "@/assets/brands/imgi_15_Image_2018092931C4.jpg";
-import brand15 from "@/assets/brands/imgi_16_Image_20180929F964.jpg";
-import brand16 from "@/assets/brands/imgi_17_Image_2018092689BC.jpg";
-import brand17 from "@/assets/brands/imgi_18_Image_2018092927F1.jpg";
-import brand18 from "@/assets/brands/imgi_19_Image_20180925D56E.jpg";
-import brand19 from "@/assets/brands/imgi_20_Image_201809259D84.jpg";
-import brand20 from "@/assets/brands/imgi_21_Image_20180925384D.jpg";
-import brand21 from "@/assets/brands/imgi_22_Image_2018092965A3.jpg";
-import brand22 from "@/assets/brands/imgi_23_Image_20180925236E.jpg";
-import brand23 from "@/assets/brands/imgi_24_Image_20180929B262.jpg";
-import brand24 from "@/assets/brands/imgi_25_Image_2018092914DA.jpg";
-import brand25 from "@/assets/brands/imgi_26_Image_201809251BB7.jpg";
-import brand26 from "@/assets/brands/imgi_27_Image_20180925AB6A.jpg";
-import brand27 from "@/assets/brands/imgi_28_Image_201809256808.jpg";
+import brand6 from "../../../assets/brands/imgi_6_Image_201809295CA8.jpg";
+import brand7 from "../../../assets/brands/imgi_7_Image_201809299143.jpg";
+import brand8 from "../../../assets/brands/imgi_8_Image_20180925A907.jpg";
+import brand9 from "../../../assets/brands/imgi_9_Image_201809252DD9.jpg";
+import brand10 from "../../../assets/brands/imgi_10_Image_20180925BD0A.jpg";
+import brand11 from "../../../assets/brands/imgi_11_Image_20180929790C.jpg";
+import brand12 from "../../../assets/brands/imgi_12_Image_201809294543.jpg";
+import brand13 from "../../../assets/brands/imgi_13_Image_2018092928CD.jpg";
+import brand14 from "../../../assets/brands/imgi_14_Image_201809291B14.jpg";
+import brand15 from "../../../assets/brands/imgi_15_Image_2018092931C4.jpg";
+import brand16 from "../../../assets/brands/imgi_16_Image_20180929F964.jpg";
+import brand17 from "../../../assets/brands/imgi_17_Image_2018092689BC.jpg";
+import brand18 from "../../../assets/brands/imgi_18_Image_2018092927F1.jpg";
+import brand19 from "../../../assets/brands/imgi_19_Image_20180925D56E.jpg";
+import brand20 from "../../../assets/brands/imgi_20_Image_201809259D84.jpg";
+import brand21 from "../../../assets/brands/imgi_21_Image_20180925384D.jpg";
+import brand22 from "../../../assets/brands/imgi_22_Image_2018092965A3.jpg";
+import brand23 from "../../../assets/brands/imgi_23_Image_20180925236E.jpg";
+import brand24 from "../../../assets/brands/imgi_24_Image_20180929B262.jpg";
+import brand25 from "../../../assets/brands/imgi_25_Image_2018092914DA.jpg";
+
 
 const Brands = () => {
     const { t } = useTranslation();
     const brands = [
-        brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9,
-        brand10, brand11, brand12, brand13, brand14, brand15, brand16, brand17,
-        brand18, brand19, brand20, brand21, brand22, brand23, brand24, brand25,
-        brand26, brand27
+        { name: "Brand 6", logo: brand6 }, { name: "Brand 7", logo: brand7 }, { name: "Brand 8", logo: brand8 },
+        { name: "Brand 9", logo: brand9 }, { name: "Brand 10", logo: brand10 }, { name: "Brand 11", logo: brand11 },
+        { name: "Brand 12", logo: brand12 }, { name: "Brand 13", logo: brand13 }, { name: "Brand 14", logo: brand14 },
+        { name: "Brand 15", logo: brand15 }, { name: "Brand 16", logo: brand16 }, { name: "Brand 17", logo: brand17 },
+        { name: "Brand 18", logo: brand18 }, { name: "Brand 19", logo: brand19 }, { name: "Brand 20", logo: brand20 },
+        { name: "Brand 21", logo: brand21 }, { name: "Brand 22", logo: brand22 }, { name: "Brand 23", logo: brand23 },
+        { name: "Brand 24", logo: brand24 }, { name: "Brand 25", logo: brand25 }
     ];
 
     // Duplicate brands for seamless loop
@@ -91,8 +88,9 @@ const Brands = () => {
                                 transition={{ duration: 0.3 }}
                             >
                                 <img
-                                    src={brand}
-                                    alt={`Brand ${(index % brands.length) + 1}`}
+                                    src={brand.logo}
+                                    alt={brand.name}
+                                    loading="lazy"
                                     className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                                 />
                             </motion.div>

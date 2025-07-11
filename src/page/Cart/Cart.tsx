@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/useCart';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Cart = () => {
   const { t } = useTranslation();
@@ -44,34 +45,43 @@ const Cart = () => {
 
   if (cart.items.length === 0) {
     return (
-      <div className="min-h-screen bg-background pt-20">
-        <div className="container mx-auto px-4 py-16">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-md mx-auto"
-          >
-            <div className="bg-card rounded-3xl shadow-xl p-12 border border-border">
-              <div className="w-24 h-24 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
-                <ShoppingCart className="w-12 h-12 text-primary" />
+      <>
+        <Helmet>
+          <title>Shopping Cart | ALAMOUDI GROUP</title>
+        </Helmet>
+        <div className="min-h-screen bg-background pt-20">
+          <div className="container mx-auto px-4 py-16">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="text-center max-w-md mx-auto"
+            >
+              <div className="bg-card rounded-3xl shadow-xl p-12 border border-border">
+                <div className="w-24 h-24 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
+                  <ShoppingCart className="w-12 h-12 text-primary" />
+                </div>
+                <h2 className="text-2xl font-bold text-card-foreground mb-4">{t('cart.empty.title')}</h2>
+                <p className="text-muted-foreground mb-8">{t('cart.empty.description')}</p>
+                <Link to="/products">
+                  <Button>
+                    {t('cart.empty.button')}
+                  </Button>
+                </Link>
               </div>
-              <h2 className="text-2xl font-bold text-card-foreground mb-4">{t('cart.empty.title')}</h2>
-              <p className="text-muted-foreground mb-8">{t('cart.empty.description')}</p>
-              <Link to="/products">
-                <Button>
-                  {t('cart.empty.button')}
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
   return (
     <div className="min-h-screen bg-background pt-20">
+      <Helmet>
+        <title>Shopping Cart | ALAMOUDI GROUP</title>
+        <meta name="description" content="Review your shopping cart at ALAMOUDI GROUP. Check your items and proceed to checkout." />
+      </Helmet>
       <div className="container mx-auto px-4 py-8">
         <motion.div
           variants={containerVariants}

@@ -12,6 +12,7 @@ const router = createBrowserRouter([
             // { path: "about", lazy: () => import("@/page/About/About").then((module) => ({ Component: module.default })), },
             { path: "products", lazy: () => import("@/page/Product/Product").then((module) => ({ Component: module.default })), },
             { path: "products/:id", lazy: () => import("@/page/Product/ProductDetail/ProductDetail").then((module) => ({ Component: module.default })), },
+            { path: "category/:categoryName", lazy: () => import("@/page/Category/Category").then((module) => ({ Component: module.default })), },
             { path: "cart", lazy: () => import("@/page/Cart/Cart").then((module) => ({ Component: module.default })), },
             // { path: "checkout", lazy: () => import("@/page/Checkout/Checkout").then((module) => ({ Component: module.default })), },
             // { path: "login", lazy: () => import("@/page/Login/Login").then((module) => ({ Component: module.default })), },

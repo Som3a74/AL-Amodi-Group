@@ -67,6 +67,34 @@
       "sanitary": {
         "title": "تركيبات صحية",
         "description": "تركيبات وتجهيزات احترافية"
+      },
+      "washbasin": {
+        "title": "مغاسل",
+        "description": "مجموعة متنوعة من المغاسل العصرية والكلاسيكية"
+      },
+      "whirlpool": {
+        "title": "جاكوزي",
+        "description": "أنظمة جاكوزي للاسترخاء والرفاهية"
+      },
+      "washbasin-furniture": {
+        "title": "أثاث المغاسل",
+        "description": "وحدات أثاث متكاملة للمغاسل"
+      },
+      "swirl-vessel": {
+        "title": "أحواض دوامية",
+        "description": "أحواض بتصاميم دوامية فريدة"
+      },
+      "mosaic": {
+        "title": "فسيفساء",
+        "description": "بلاط فسيفساء لتصاميم مبتكرة"
+      },
+      "faucets": {
+        "title": "خلاطات",
+        "description": "خلاطات مياه بتصاميم وجودة عالية"
+      },
+      "bathtub": {
+        "title": "بانيوهات",
+        "description": "مجموعة واسعة من أحواض الاستحمام المريحة"
       }
     }
   },
@@ -215,7 +243,14 @@
       "accessories": "إكسسوارات الحمام",
       "hydrotherapy": "العلاج المائي",
       "kitchen": "حلول المطبخ",
-      "sanitary": "التجهيزات الصحية"
+      "sanitary": "التجهيزات الصحية",
+      "washbasin": "مغاسل",
+      "whirlpool": "جاكوزي",
+      "washbasin-furniture": "أثاث المغاسل",
+      "swirl-vessel": "أحواض دوامية",
+      "mosaic": "فسيفساء",
+      "faucets": "خلاطات",
+      "bathtub": "بانيوهات"
     },
     "contact": {
       "title": "معلومات الاتصال",

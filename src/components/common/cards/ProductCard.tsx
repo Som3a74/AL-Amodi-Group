@@ -53,6 +53,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
       <div className="relative overflow-hidden h-64">
         <motion.img
           src={product.image}
+          loading="lazy"
           alt={t(`product_${product.id}_name`)}
           className="w-full h-full object-cover cursor-pointer"
           whileHover={{ scale: 1.1 }}

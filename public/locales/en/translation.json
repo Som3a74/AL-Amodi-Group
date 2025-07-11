@@ -67,6 +67,34 @@
       "sanitary": {
         "title": "Sanitary Fittings",
         "description": "Professional grade fittings and fixtures"
+      },
+      "washbasin": {
+        "title": "Washbasins",
+        "description": "A diverse collection of modern and classic washbasins."
+      },
+      "whirlpool": {
+        "title": "Whirlpools",
+        "description": "Luxurious whirlpool systems for relaxation and wellness."
+      },
+      "washbasin-furniture": {
+        "title": "Washbasin Furniture",
+        "description": "Integrated furniture units for washbasins."
+      },
+      "swirl-vessel": {
+        "title": "Swirl Vessels",
+        "description": "Vessels with unique and elegant swirl designs."
+      },
+      "mosaic": {
+        "title": "Mosaics",
+        "description": "Creative mosaic tiles for innovative designs."
+      },
+      "faucets": {
+        "title": "Faucets",
+        "description": "High-quality faucets with elegant designs."
+      },
+      "bathtub": {
+        "title": "Bathtubs",
+        "description": "A wide range of comfortable and stylish bathtubs."
       }
     }
   },
@@ -238,7 +266,14 @@
       "accessories": "Bathroom Accessories",
       "hydrotherapy": "Hydrotherapy",
       "kitchen": "Kitchen Solutions",
-      "sanitary": "Sanitary Fittings"
+      "sanitary": "Sanitary Fittings",
+      "washbasin": "Washbasins",
+      "whirlpool": "Whirlpools",
+      "washbasin-furniture": "Washbasin Furniture",
+      "swirl-vessel": "Swirl Vessels",
+      "mosaic": "Mosaics",
+      "faucets": "Faucets",
+      "bathtub": "Bathtubs"
     },
     "contact": {
       "title": "Contact Info",

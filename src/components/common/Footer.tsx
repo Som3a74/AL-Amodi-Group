@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation, Trans } from 'react-i18next';
+import productData from "@/data/products.json";
 import { 
   PhoneIcon, 
   MailIcon, 
@@ -23,14 +24,11 @@ const Footer = () => {
     { name: t('footer.quickLinks.about'), href: "/about" }
   ];
 
-  const categories = [
-    { name: t('footer.categories.prestige'), href: "/products/prestige" },
-    { name: t('footer.categories.contemporary'), href: "/products/contemporary" },
-    { name: t('footer.categories.accessories'), href: "/products/accessories" },
-    { name: t('footer.categories.hydrotherapy'), href: "/products/hydrotherapy" },
-    { name: t('footer.categories.kitchen'), href: "/products/kitchen" },
-    { name: t('footer.categories.sanitary'), href: "/products/sanitary-fittings" }
-  ];
+  const uniqueCategories = [...new Set(productData.products.map(p => p.category))];
+  const categories = uniqueCategories.map(cat => ({
+    name: t(`footer.categories.${cat.toLowerCase().replace(/\s+/g, '-')}`, cat),
+    href: `/category/${cat.toLowerCase().replace(/\s+/g, '-')}`
+  }));
 
   const socialLinks = [
     { icon: <Facebook className="h-5 w-5" />, href: "#", label: "Facebook" },

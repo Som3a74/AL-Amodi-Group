@@ -29,6 +29,7 @@ import productsData from "@/data/products.json";
 import { useCart } from "@/hooks/useCart";
 import type { Product } from "@/types/types";
 import { toast } from 'sonner';
+import { Helmet } from "react-helmet-async";
 
 const ProductDetail = () => {
   const { t } = useTranslation(['translation', 'products']);
@@ -53,30 +54,35 @@ const ProductDetail = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-background via-muted/10 to-background flex items-center justify-center">
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-        >
+      <>
+        <Helmet>
+          <title>Product Not Found | ALAMOUDI GROUP</title>
+        </Helmet>
+        <div className="min-h-screen bg-gradient-to-br from-background via-muted/10 to-background flex items-center justify-center">
           <motion.div
-            className="text-6xl mb-4"
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            className="text-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
           >
-            🔍
+            <motion.div
+              className="text-6xl mb-4"
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            >
+              🔍
+            </motion.div>
+            <h2 className="text-2xl font-bold mb-2">{t('productDetail.notFound.title')}</h2>
+            <p className="text-muted-foreground mb-6">{t('productDetail.notFound.description')}</p>
+            <button
+              onClick={() => navigate("/products")}
+              className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              {t('productDetail.notFound.backButton')}
+            </button>
           </motion.div>
-          <h2 className="text-2xl font-bold mb-2">{t('productDetail.notFound.title')}</h2>
-          <p className="text-muted-foreground mb-6">{t('productDetail.notFound.description')}</p>
-          <button
-            onClick={() => navigate("/products")}
-            className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-          >
-            {t('productDetail.notFound.backButton')}
-          </button>
-        </motion.div>
-      </div>
+        </div>
+      </>
     );
   }
 
@@ -133,6 +139,10 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/10 to-background py-20">
+      <Helmet>
+        <title>{`${product.name} | ALAMOUDI GROUP`}</title>
+        <meta name="description" content={product.description} />
+      </Helmet>
       <div className="container mx-auto px-4">
         {/* Back Button */}
         <motion.button

@@ -3,13 +3,14 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Search, Filter, SlidersHorizontal, Star } from "lucide-react";
 import productsData from "@/data/products.json";
 import ProductCard from "@/components/common/cards/ProductCard";
-import type { Product } from "@/types/types";
+import type { Product as ProductType } from "@/types/types";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 
 const Product = () => {
   const { t } = useTranslation();
-  const products = productsData.products as Product[];
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
+  const products = productsData.products as ProductType[];
+  const [filteredProducts, setFilteredProducts] = useState<ProductType[]>(products);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedMaterials, setSelectedMaterials] = useState<string[]>([]);
@@ -104,6 +105,10 @@ const Product = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/10 to-background py-20">
+      <Helmet>
+        <title>Products | ALAMOUDI GROUP</title>
+        <meta name="description" content="Browse our wide range of high-quality building and finishing materials. Find ceramics, porcelain, sanitary ware, and more." />
+      </Helmet>
       {/* Header */}
       <motion.div
         className="container mx-auto px-4 py-8"
@@ -277,7 +282,7 @@ const Product = () => {
               {/* Categories */}
               <div className="mb-6">
                 <h4 className="font-semibold mb-3">{t('productPage.filters.categories')}</h4>
-                <div className="space-y-2 max-h-40 overflow-y-auto">
+                <div className="space-y-2">
                   {productsData.categories.map((category) => (
                     <label key={category} className="flex items-center gap-2 cursor-pointer">
                       <input
@@ -286,7 +291,9 @@ const Product = () => {
                         onChange={() => handleCategoryChange(category)}
                         className="rounded border-border text-primary focus:ring-primary/20"
                       />
-                      <span className="text-sm">{category}</span>
+                      <span className="text-sm">
+                        {t(`category.items.${category.toLowerCase().replace(/\s+/g, '-')}.title`, category)}
+                      </span>
                     </label>
                   ))}
                 </div>

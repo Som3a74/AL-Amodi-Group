@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 // Simple Input component
 const Input = ({ className = "", ...props }: React.InputHTMLAttributes<HTMLInputElement>) => (
@@ -76,6 +77,10 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen pt-16">
+      <Helmet>
+        <title>Contact Us | ALAMOUDI GROUP</title>
+        <meta name="description" content="Get in touch with ALAMOUDI GROUP. Find our address, phone number, and email, or send us a message through our contact form." />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-background">
         <div className="container mx-auto px-4 text-center">
