@@ -204,13 +204,27 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
           transition={{ delay: 0.8, duration: 0.5 }}
         >
           <div className="flex items-center gap-2">
-            <span className="text-xl font-bold text-primary">
-              QAR {product.price.toLocaleString()}
-            </span>
-            {product.discount > 0 && (
-              <span className="text-sm text-muted-foreground line-through">
-                {product.originalPrice.toLocaleString()}
-              </span>
+            {product.category === 'MOSAIC' && product.price_per_m2 && product.price_per_m2_original ? (
+              <>
+                <span className="text-xl font-bold text-primary">
+                  QAR {product.price_per_m2.toLocaleString()}
+                  <span className="text-sm font-normal text-muted-foreground"> / {t('translation:meter')}</span>
+                </span>
+                <span className="text-sm text-muted-foreground line-through">
+                  {product.price_per_m2_original.toLocaleString()}
+                </span>
+              </>
+            ) : (
+              <>
+                <span className="text-xl font-bold text-primary">
+                  QAR {product.price.toLocaleString()}
+                </span>
+                {product.discount > 0 && (
+                  <span className="text-sm text-muted-foreground line-through">
+                    {product.originalPrice.toLocaleString()}
+                  </span>
+                )}
+              </>
             )}
           </div>
 

@@ -123,7 +123,7 @@ const Product = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Our <span className="text-primary bg-gradient-to-r from-primary to-primary/80 bg-clip-text">{t('ourProducts')}</span>
+           <span className="text-primary bg-gradient-to-r from-primary to-primary/80 bg-clip-text">{t('ourProducts')}</span>
           </motion.h1>
           <motion.p
             className="text-muted-foreground text-lg max-w-2xl mx-auto"

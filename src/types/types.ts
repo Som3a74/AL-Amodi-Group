@@ -48,6 +48,8 @@ export interface Product {
     category: string;
     brand: string;
     price: number;
+    price_per_m2?: number;
+    price_per_m2_original?: number;
     originalPrice: number;
     discount: number;
     image: string;
