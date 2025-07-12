@@ -20,7 +20,7 @@ const Product = () => {
   const [showOnSale, setShowOnSale] = useState(false);
   const [showNew, setShowNew] = useState(false);
   const [showInStock, setShowInStock] = useState(false);
-  const [sortBy, setSortBy] = useState("name");
+  const [sortBy, setSortBy] = useState("rating");
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
   const gridRef = useRef(null);
@@ -155,6 +155,7 @@ const Product = () => {
 
           <select
             value={sortBy}
+            defaultValue="rating"
             onChange={(e) => setSortBy(e.target.value)}
             className="px-4 py-3 border border-border rounded-xl bg-background/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300"
           >

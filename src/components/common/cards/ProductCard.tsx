@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Star, ShoppingCart, Heart, Eye } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import { useCart } from "@/hooks/useCart";
@@ -50,7 +50,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
       className="group bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50"
     >
       {/* Product Image */}
-      <div className="relative overflow-hidden h-64">
+      <Link to={`/products/${product.id}`} className="relative block overflow-hidden h-64">
         <motion.img
           src={product.image}
           loading="lazy"
@@ -128,7 +128,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
             </motion.span>
           )}
         </div>
-      </div>
+      </Link>
 
       {/* Product Info */}
       <motion.div
@@ -203,7 +203,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-baseline gap-2">
             {product.category === 'MOSAIC' && product.price_per_m2 && product.price_per_m2_original ? (
               <>
                 <span className="text-xl font-bold text-primary">

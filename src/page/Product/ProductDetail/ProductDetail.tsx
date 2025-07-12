@@ -493,7 +493,7 @@ const ProductDetail = () => {
         >
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-border overflow-hidden">
             {/* Tab Navigation */}
-            <div className="flex border-b border-border">
+            <div className="flex border-b border-border overflow-auto">
               {[
                 { id: 'description', label: t('productDetail.tabs.description'), icon: Info },
                 { id: 'specifications', label: t('productDetail.tabs.specifications'), icon: Package },

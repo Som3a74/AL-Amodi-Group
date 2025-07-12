@@ -96,6 +96,10 @@
       "bathtub": {
         "title": "Bathtubs",
         "description": "A wide range of comfortable and stylish bathtubs."
+      },
+      "wc": {
+        "title": "WC & Bidets",
+        "description": "High-quality water closets and bidets with modern features."
       }
     }
   },
