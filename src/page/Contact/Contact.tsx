@@ -53,15 +53,15 @@ export default function ContactPage() {
       title: t('contactPage.info.phoneTitle'),
       content: (
         <div className="space-y-2">
-          <p>+974 – 44684693</p>
-          <p>+974 – 44161487</p>
+          <p>+20 2 24684693</p>
+          <p>+20 2 24161487</p>
         </div>
       ),
     },
     {
       icon: <MailIcon className="h-6 w-6" />,
       title: t('contactPage.info.emailTitle'),
-      content: "info@alamodigroup.com.qa",
+      content: "info@almahalawygroup.com.eg",
     },
     {
       icon: <ClockIcon className="h-6 w-6" />,
@@ -78,8 +78,8 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen pt-16">
       <Helmet>
-        <title>Contact Us | ALAMOUDI GROUP</title>
-        <meta name="description" content="Get in touch with ALAMOUDI GROUP. Find our address, phone number, and email, or send us a message through our contact form." />
+        <title>Contact Us | AL-MAHALAWY GROUP</title>
+        <meta name="description" content="Get in touch with AL-MAHALAWY GROUP. Find our address, phone number, and email, or send us a message through our contact form." />
       </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-background">
@@ -209,7 +209,7 @@ export default function ContactPage() {
               {/* Map */}
               <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462563.0055176543!2d51.23076092382946!3d25.29493654068684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c534ffdce87f%3A0x44d2061f2339e7!2sDoha%2C%20Qatar!5e0!3m2!1sen!2s!4v1702398740123!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220986.30456108428!2d31.22440049447547!3d30.05948753232675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21ebe3%3A0xb75586b51e50058b!2sCairo%2C%20Egypt!5e0!3m2!1sen!2seg!4v1716666666666!5m2!1sen!2seg"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

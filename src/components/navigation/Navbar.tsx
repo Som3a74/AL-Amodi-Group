@@ -68,7 +68,7 @@ export default function Navbar() {
           to="/"
           className="font-bold text-xl tracking-tight"
         >
-          <img src={logo} alt="AL Amodi Group" className="h-14 w-auto" />
+          <img src={logo} alt="Al-Mahalawy Group" className="h-14 w-auto" />
         </Link>
 
         {/* Desktop navigation */}
@@ -136,7 +136,7 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="left" className="px-0">
               <div className="px-7 flex items-center justify-between mb-6">
-                <div className="font-bold text-xl">AL Amodi Group</div>
+                <div className="font-bold text-xl">Al-Mahalawy Group</div>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon">
                     <XIcon className="h-5 w-5" />

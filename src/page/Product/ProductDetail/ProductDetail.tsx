@@ -56,7 +56,7 @@ const ProductDetail = () => {
     return (
       <>
         <Helmet>
-          <title>Product Not Found | ALAMOUDI GROUP</title>
+          <title>Product Not Found | AL-MAHALAWY GROUP</title>
         </Helmet>
         <div className="min-h-screen bg-gradient-to-br from-background via-muted/10 to-background flex items-center justify-center">
           <motion.div
@@ -140,7 +140,7 @@ const ProductDetail = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/10 to-background py-20">
       <Helmet>
-        <title>{`${product.name} | ALAMOUDI GROUP`}</title>
+        <title>{`${product.name} | AL-MAHALAWY GROUP`}</title>
         <meta name="description" content={product.description} />
       </Helmet>
       <div className="container mx-auto px-4">
@@ -357,15 +357,15 @@ const ProductDetail = () => {
                 transition={{ delay: 0.6 }}
               >
                 <span className="text-3xl font-bold text-primary">
-                  QAR {product.price.toLocaleString()}
+                  EGP {product.price.toLocaleString()}
                 </span>
                 {product.discount > 0 && (
                   <>
                     <span className="text-xl text-muted-foreground line-through">
-                      QAR {product.originalPrice.toLocaleString()}
+                      EGP {product.originalPrice.toLocaleString()}
                     </span>
                     <span className="text-green-600 font-semibold">
-                      Save QAR {(product.originalPrice - product.price).toLocaleString()}
+                      Save EGP {(product.originalPrice - product.price).toLocaleString()}
                     </span>
                   </>
                 )}

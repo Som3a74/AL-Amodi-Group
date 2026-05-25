@@ -2,7 +2,7 @@ import { writeFile, readFile } from 'fs/promises';
 import { resolve } from 'path';
 
 async function generateSitemap() {
-  const baseUrl = 'https://www.alamoudigroup.com'; // Please change this to your actual domain
+  const baseUrl = 'https://www.almahalawygroup.com'; // Please change this to your actual domain
   const sitemapPath = resolve('public', 'sitemap.xml');
   const productsPath = resolve('src', 'data', 'products.json');
 

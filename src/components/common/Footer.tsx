@@ -204,7 +204,7 @@ const Footer = () => {
         >
           <p className="text-gray-400 text-sm">
             <Trans i18nKey="footer.bottom.agent">
-              Exclusive agents for <span className="text-primary font-semibold">Griferias Maier</span> in Qatar
+              Exclusive agents for <span className="text-primary font-semibold">Griferias Maier</span> in Egypt
             </Trans>
           </p>
         </motion.div>

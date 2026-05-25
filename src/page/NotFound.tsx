@@ -15,7 +15,7 @@ const NotFound = () => {
         >
           <img
             src={logo}
-            alt="Al Amodi Group"
+            alt="Al-Mahalawy Group"
             className="mx-auto h-20 md:h-24 mb-4"
           />
         </motion.div>
@@ -127,7 +127,7 @@ const NotFound = () => {
           transition={{ duration: 0.8, delay: 1 }}
         >
           <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-primary">Al Amodi Group</span>
+            <span className="font-semibold text-primary">Al-Mahalawy Group</span>
             {" "}• رائدون في مواد البناء منذ 1957
           </p>
         </motion.div>

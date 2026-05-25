@@ -109,7 +109,7 @@ export default function Intro() {
           >
             <img
               src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              alt="AL Amodi Group - Building Materials Supply"
+              alt="Al-Mahalawy Group - Building Materials Supply"
               className="w-full h-auto object-cover rounded-xl"
             />
             <div className="absolute inset-0 bg-primary/10 rounded-xl" />

@@ -13,7 +13,7 @@ const Cart = () => {
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'EGP',
     }).format(price);
   };
 
@@ -47,7 +47,7 @@ const Cart = () => {
     return (
       <>
         <Helmet>
-          <title>Shopping Cart | ALAMOUDI GROUP</title>
+          <title>Shopping Cart | AL-MAHALAWY GROUP</title>
         </Helmet>
         <div className="min-h-screen bg-background pt-20">
           <div className="container mx-auto px-4 py-16">
@@ -79,8 +79,8 @@ const Cart = () => {
   return (
     <div className="min-h-screen bg-background pt-20">
       <Helmet>
-        <title>Shopping Cart | ALAMOUDI GROUP</title>
-        <meta name="description" content="Review your shopping cart at ALAMOUDI GROUP. Check your items and proceed to checkout." />
+        <title>Shopping Cart | AL-MAHALAWY GROUP</title>
+        <meta name="description" content="Review your shopping cart at AL-MAHALAWY GROUP. Check your items and proceed to checkout." />
       </Helmet>
       <div className="container mx-auto px-4 py-8">
         <motion.div

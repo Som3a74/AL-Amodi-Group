@@ -41,7 +41,7 @@ const CategoryPage = () => {
         return (
             <>
                 <Helmet>
-                    <title>{`Category: ${displayName}`} | ALAMOUDI GROUP</title>
+                    <title>{`Category: ${displayName}`} | AL-MAHALAWY GROUP</title>
                     <meta name="description" content={`No products found for category ${displayName}.`} />
                 </Helmet>
                 <div className="flex flex-col items-center justify-center min-h-[60vh] text-center bg-background">
@@ -75,8 +75,8 @@ const CategoryPage = () => {
     return (
         <section className="py-16 md:py-24 bg-gradient-to-br from-background via-muted/10 to-background">
             <Helmet>
-                <title>{`Category: ${displayName}`} | ALAMOUDI GROUP</title>
-                <meta name="description" content={`Explore products in the ${displayName} category at ALAMOUDI GROUP.`} />
+                <title>{`Category: ${displayName}`} | AL-MAHALAWY GROUP</title>
+                <meta name="description" content={`Explore products in the ${displayName} category at AL-MAHALAWY GROUP.`} />
             </Helmet>
             <div className="container mx-auto px-4">
                 <motion.div

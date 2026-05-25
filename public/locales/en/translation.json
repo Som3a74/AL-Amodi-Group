@@ -20,13 +20,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "AL Amodi Group",
-    "subtitle": "Pioneer in Building Materials Supply Since 1957 - Your Trusted Partner in Doha, Qatar",
+    "title": "Al-Mahalawy Group",
+    "subtitle": "Pioneer in Building Materials Supply Since 1957 - Your Trusted Partner in Cairo, Egypt",
     "button": "Explore Our Products"
   },
   "intro": {
-    "welcome": "Welcome to AL Amodi Group",
-    "description": "Based in Doha, Qatar, AL Amodi Group is the pioneer of direct supply and distribution of branded international building materials from all over the world. Family-owned since 1957, the parent company AL Amodi Store is an innovative company rooted in a time-honored tradition.",
+    "welcome": "Welcome to Al-Mahalawy Group",
+    "description": "Based in Cairo, Egypt, Al-Mahalawy Group is the pioneer of direct supply and distribution of branded international building materials from all over the world. Family-owned since 1957, the parent company Al-Mahalawy Store is an innovative company rooted in a time-honored tradition.",
     "stats": {
       "brands": "Exclusive Brands",
       "products": "Products",
@@ -35,7 +35,7 @@
     },
     "overlay": {
       "title": "Quality Building Materials",
-      "subtitle": "Trusted by professionals across Qatar for over 6 decades"
+      "subtitle": "Trusted by professionals across Egypt for over 6 decades"
     }
   },
   "category": {
@@ -147,7 +147,7 @@
       },
       "delivery": {
         "title": "Fast Delivery",
-        "description": "Get your products delivered quickly across Qatar"
+        "description": "Get your products delivered quickly across Egypt"
       },
       "returns": {
         "title": "Easy Returns",
@@ -184,8 +184,8 @@
   },
   "contactPage": {
     "hero": {
-      "title": "Contact AL Amodi Group",
-      "description": "Get in touch with Qatar's leading building materials supplier. We're here to help with all your construction needs."
+      "title": "Contact Al-Mahalawy Group",
+      "description": "Get in touch with Egypt's leading building materials supplier. We're here to help with all your construction needs."
     },
     "form": {
       "title": "Send us a Message",
@@ -202,13 +202,13 @@
     },
     "info": {
       "title": "Get in Touch",
-      "description": "Visit our head office in Doha or contact us directly. Our team is ready to assist you with premium building materials and expert advice.",
+      "description": "Visit our head office in Cairo or contact us directly. Our team is ready to assist you with premium building materials and expert advice.",
       "addressTitle": "Address",
-      "addressLine1": "AL Amodi GROUP",
+      "addressLine1": "Al-Mahalawy GROUP",
       "addressLine2": "Al Dar Apartments Building",
       "addressLine3": "Mezzanine floor, Building no 91",
       "addressLine4": "Zone 14, Street 920",
-      "addressLine5": "Doha - Qatar",
+      "addressLine5": "Cairo - Egypt",
       "phoneTitle": "Phone Numbers",
       "emailTitle": "Email",
       "hoursTitle": "Working Hours",
@@ -254,8 +254,8 @@
   },
   "footer": {
     "company": {
-      "name": "AL Amodi Group",
-      "description": "Leading company in building materials and sanitary fixtures in Qatar since 1957. We provide the finest modern and luxury solutions for your projects."
+      "name": "Al-Mahalawy Group",
+      "description": "Leading company in building materials and sanitary fixtures in Egypt since 1957. We provide the finest modern and luxury solutions for your projects."
     },
     "quickLinks": {
       "title": "Quick Links",
@@ -282,34 +282,34 @@
     },
     "contact": {
       "title": "Contact Info",
-      "address": "Al Dar Apartments Building, Mezzanine floor, Building no 91, Zone 14, Street 920, Doha - Qatar",
-      "phone": "+974 – 44684693 / +974 – 44161487",
-      "email": "info@alamodigroup.com.qa",
+      "address": "Al Dar Apartments Building, Mezzanine floor, Building no 91, Zone 14, Street 920, Cairo - Egypt",
+      "phone": "+20 2 24684693 / +20 2 24161487",
+      "email": "info@almahalawygroup.com.eg",
       "hours": "8:00 AM to 12:00 PM & 4:00 PM to 08:00 PM"
     },
     "bottom": {
-      "copyright": "© {{year}} AL Amodi Group. All rights reserved.",
+      "copyright": "© {{year}} Al-Mahalawy Group. All rights reserved.",
       "privacy": "Privacy Policy",
       "terms": "Terms & Conditions",
-      "agent": "Exclusive agents for <1>Griferias Maier</1> in Qatar"
+      "agent": "Exclusive agents for <1>Griferias Maier</1> in Egypt"
     }
   },
   "contactInfo": {
     "title": "Get in Touch",
-    "description": "Ready to start your next project? Contact AL Amodi Group today and discover why we're Qatar's trusted building materials supplier since 1957.",
+    "description": "Ready to start your next project? Contact Al-Mahalawy Group today and discover why we're Egypt's trusted building materials supplier since 1957.",
     "button": "Contact Us Today",
     "details": {
       "office": {
         "title": "Visit Our Office",
-        "content": "Al Dar Apartments Building, Mezzanine floor, Building no 91, Zone 14, Street 920, Doha - Qatar"
+        "content": "Al Dar Apartments Building, Mezzanine floor, Building no 91, Zone 14, Street 920, Cairo - Egypt"
       },
       "call": {
         "title": "Call Us",
-        "content": "+974 – 44684693 / +974 – 44161487"
+        "content": "+20 2 24684693 / +20 2 24161487"
       },
       "email": {
         "title": "Email Us",
-        "content": "info@alamodigroup.com.qa"
+        "content": "info@almahalawygroup.com.eg"
       },
       "hours": {
         "title": "Working Hours",

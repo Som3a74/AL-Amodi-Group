@@ -9,8 +9,8 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>Home | ALAMOUDI GROUP</title>
-        <meta name="description" content="Welcome to ALAMOUDI GROUP. We are a leading supplier of high-quality building and finishing materials." />
+        <title>Home | AL-MAHALAWY GROUP</title>
+        <meta name="description" content="Welcome to AL-MAHALAWY GROUP. We are a leading supplier of high-quality building and finishing materials." />
       </Helmet>
       <Hero />
       <Intro />

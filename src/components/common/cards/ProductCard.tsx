@@ -207,7 +207,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
             {product.category === 'MOSAIC' && product.price_per_m2 && product.price_per_m2_original ? (
               <>
                 <span className="text-xl font-bold text-primary">
-                  QAR {product.price_per_m2.toLocaleString()}
+                  EGP {product.price_per_m2.toLocaleString()}
                   <span className="text-sm font-normal text-muted-foreground"> / {t('translation:meter')}</span>
                 </span>
                 <span className="text-sm text-muted-foreground line-through">
@@ -217,7 +217,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
             ) : (
               <>
                 <span className="text-xl font-bold text-primary">
-                  QAR {product.price.toLocaleString()}
+                  EGP {product.price.toLocaleString()}
                 </span>
                 {product.discount > 0 && (
                   <span className="text-sm text-muted-foreground line-through">

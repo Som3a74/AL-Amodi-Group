@@ -106,7 +106,7 @@ const Product = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/10 to-background py-20">
       <Helmet>
-        <title>Products | ALAMOUDI GROUP</title>
+        <title>Products | AL-MAHALAWY GROUP</title>
         <meta name="description" content="Browse our wide range of high-quality building and finishing materials. Find ceramics, porcelain, sanitary ware, and more." />
       </Helmet>
       {/* Header */}
@@ -255,8 +255,8 @@ const Product = () => {
                     className="w-full accent-primary"
                   />
                   <div className="flex justify-between text-sm text-muted-foreground">
-                    <span>QAR {priceRange[0]}</span>
-                    <span>QAR {priceRange[1]}</span>
+                    <span>EGP {priceRange[0]}</span>
+                    <span>EGP {priceRange[1]}</span>
                   </div>
                 </div>
               </div>
